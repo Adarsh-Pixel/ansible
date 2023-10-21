@@ -2,6 +2,9 @@
   hosts: all      ## Groupname in the inventory file
   vars:                                               #Global variables: All the tasks of this play can access this variable 
     URL: play.google.com
+  vars_prompt:
+    - name: URNAME
+      promt: Enter your name
   tasks:
     - name: Printing the variable
       ansible.builtin.debug:
@@ -13,10 +16,14 @@
       vars:
         URL: task.google.com
 
+    - name: Demo on using unrelated variable
+      ansible.builtin.debug:
+        msg: value of CLIURL is {{CLIURL}}
 
-    # - name: Demo on using unrelated variable
-    #   ansible.builtin.debug:
-    #     msg: value of CLIURL is {{CLIURL}}
+    - name: printing prompt variable
+      ansible.builtin.debug:
+        msg: Name of the person is {{URNAME}}
+
 
 ## PS - if you try to print an variable that is not declared, then it will throw an error
 
