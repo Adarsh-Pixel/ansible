@@ -22,7 +22,7 @@
 
     - name: printing prompt variable
       ansible.builtin.debug:
-        msg: Name of the person is {{name}}
+        msg: Name of the person is {{URNAME}}
 
 
 ## PS - if you try to print an variable that is not declared, then it will throw an error
