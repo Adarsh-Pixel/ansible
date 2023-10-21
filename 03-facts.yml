@@ -1,0 +1,6 @@
+- name: Demo on facts
+  hosts: all      
+  tasks:
+    - name: Printing the default variable
+      ansible.builtin.debug:
+        msg: server flavour is "{{ansible_distribution}}"

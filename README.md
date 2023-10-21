@@ -45,7 +45,10 @@ YAML is just markup language : Markup language is nothing but a presentation lan
 * Task     : A Task is nothing but an action that we wish to perform
 
 # what is a fact?
-In ansible, fact is the property of the node mentioned in the inventory file. By default, ansible is going to gather all the facts the all the machines mentioned in the inventory file
+In ansible, fact is the property of the node mentioned in the inventory file. By default, ansible is going to gather all the facts the all the machines mentioned in the inventory file.
+---
+    $ ansible -i inv all  -e ansible_user=centos -e ansible_password=DevOps321 -m setup
+---
 
 ## V.*IMP
 
