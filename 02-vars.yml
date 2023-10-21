@@ -13,3 +13,7 @@
       vars:
         URL: task.google.com
 
+
+    - name: Demo on using unrelated variable
+      ansible.builtin.debug:
+        msg: value of CLIURL is {{CLIURL}}
