@@ -44,6 +44,9 @@ YAML is just markup language : Markup language is nothing but a presentation lan
 * Play     : A Play is a list of tasks.
 * Task     : A Task is nothing but an action that we wish to perform
 
+# what is a fact?
+In ansible, fact is the property of the node mentioned in the inventory file. By default, ansible is going to gather all the facts the all the machines mentioned in the inventory file
+
 ## V.*IMP
 
 # Note: If you would just like to print a variable then enclose the variable in "{{varName}}" & there is no single quote concept.
