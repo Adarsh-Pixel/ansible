@@ -7,7 +7,7 @@
 
     - name: printing the uptime
       ansible.builtin.debug: 
-        msg: "{{OUT}}" 
+        msg: "{{OUT.stdout}}" 
 
 
 # builtin shell module is going to just run but not going to display the output. Output disply is done by the debug module. If you want to 
