@@ -13,6 +13,10 @@
       set_fact:
         EXITCODE: "{{OUT.rc}}"
 
+    - name: printing the uptime exit code
+      ansible.builtin.debug: 
+        msg: uptime exit code is {{EXITCODE}}
+
 
 # builtin shell module is going to just run but not going to display the output. Output disply is done by the debug module. If you want to 
       #.. print the output of any shell module we need to register the output of it.
