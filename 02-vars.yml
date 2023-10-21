@@ -2,6 +2,8 @@
   hosts: all      ## Groupname in the inventory file
   vars:                                               #Global variables: All the tasks of this play can access this variable 
     URL: play.google.com
+  vars_files:
+    - dev.yml
   vars_prompt:
     - name: URNAME
       prompt: Enter your name
@@ -21,9 +23,13 @@
     #   ansible.builtin.debug:
     #     msg: value of CLIURL is {{CLIURL}}
 
-    - name: printing prompt variable
+    # - name: printing prompt variable
+    #   ansible.builtin.debug:
+    #     msg: Name of the person is {{URNAME}}
+
+    - name: This is env specific
       ansible.builtin.debug:
-        msg: Name of the person is {{URNAME}}
+        msg: Type of instance to be used {{INS_TYPE}}
 
 
 ## PS - if you try to print an variable that is not declared, then it will throw an error
