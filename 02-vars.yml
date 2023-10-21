@@ -3,7 +3,7 @@
   vars:                                               #Global variables: All the tasks of this play can access this variable 
     URL: play.google.com
   vars_files:
-    - dev.yml
+    - {{ENV}}.yml
   vars_prompt:
     - name: URNAME
       prompt: Enter your name
