@@ -7,5 +7,7 @@
       ansible.builtin.debug:
         msg: value of the variable is {{URL}}
 
-# Note: If you would just like to print a variable then enclose the variable in "{{varName}}" & there is no single quote concept.
-#.... & if the variable is present in between the string of words, you don't have to enclose them in quotes.
+    - name: Printing the variable name 
+      ansible.builtin.debug:
+        msg: value of the URL's is {{URL}}
+

@@ -43,3 +43,10 @@ YAML is just markup language : Markup language is nothing but a presentation lan
 * Playbook : A Playbook is a list of plays ( and that's why it always starts with -)
 * Play     : A Play is a list of tasks.
 * Task     : A Task is nothing but an action that we wish to perform
+
+## V.*IMP
+
+# Note: If you would just like to print a variable then enclose the variable in "{{varName}}" & there is no single quote concept.
+#        & if the variable is present in between the string of words, you don't have to enclose them in quotes.
+
+#       1) No two tasks of a play can have the same name.
