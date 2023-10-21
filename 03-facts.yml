@@ -1,6 +1,6 @@
 - name: Demo on facts
   hosts: all   
-  gather_facts: yes   
+  # gather_facts: no    If you don't need facts to be gathered, we can mention this as no.
   tasks:
     - name: Printing the default variable
       ansible.builtin.debug:
