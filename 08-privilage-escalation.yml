@@ -1,0 +1,10 @@
+- name: Demo on provilage escalation
+  hosts: all   
+  tasks:
+    - name: checking the user ID
+      ansible.builtin.shell: id
+      register: OUT 
+
+    - name: Printing the user details
+      ansible.builtin.debug: 
+        msg: "{{OUT}}" 
