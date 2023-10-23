@@ -1,5 +1,6 @@
 - name: Demo on provilage escalation
   hosts: all   
+  become: yes                 # Privilage escalation : runs the playbook as root user
   tasks:
     - name: checking the user ID
       ansible.builtin.shell: id
