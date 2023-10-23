@@ -17,4 +17,5 @@
 - name: copying the frontend
   ansible.builtin.copy:
     src: /tmp/frontend-main/static/
-    dest: /usr/share/nginx/html       #This ensure your source file to copy in non remote machine
+    dest: /usr/share/nginx/html/     
+    remote_src: yes                #This ensure your source file to copy in non remote machine
