@@ -21,7 +21,7 @@
     - name: run this task when the action variable is declared
       ansible.builtin.debug:
         msg: action variable is declared
-      when: action is defined
+      when: action is not defined
 
 # older verion of ansible uses undefined, latest version os ansible uses not defined
 # defined, not defined, true, false, succeded, failure - all of them are predefined keywords as per the documentation
