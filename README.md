@@ -56,3 +56,27 @@ In ansible, fact is the property of the node mentioned in the inventory file. By
 #        & if the variable is present in between the string of words, you don't have to enclose them in quotes.
 
 #       1) No two tasks of a play can have the same name.
+
+
+
+## Ansible Roles
+
+---
+roles/
+    common/                     # This hirerachy represents a "role"
+        tasks/
+            main.yml            # <--- tasks file can include smaller files if warranted
+        handlers/
+            main.yml            # <-- handlers file
+        templates/
+            ntp.conf.js         # ,---- templates end in .j2
+        files/
+            bar.txt             # <-- files for use with the copy resource
+            foo.sh              # <--- script files for use with the script resoruce
+        vars/
+            main.yml            # variables associated with this role
+        defaults/
+            main.yml            # <--- default lower priority variable for this role
+        meta/
+            main.yml            # <--- role dependencies
+---
