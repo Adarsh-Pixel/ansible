@@ -1,5 +1,7 @@
 - name: Demo on conditions
   hosts: all   
+  vars:
+    action: true 
   tasks:
     - name: Run this only when the distribution is CentOS
       ansible.builtin.debug:
@@ -10,6 +12,11 @@
       ansible.builtin.debug:
         msg: Welcome to Ubuntu {{ansible_default_ipv4.macaddress}}
       when: ansible_distribution == "Ubuntu"
+
+    - name: run this action
+      ansible.builtin.debug:
+        msg: action is true
+      when: action
 
 # older verion of ansible uses undefined, latest version os ansible uses not defined
 # defined, not defined, true, false, succeded, failure - all of them are predefined keywords as per the documentation
