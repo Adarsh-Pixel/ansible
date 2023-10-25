@@ -31,3 +31,6 @@
     state: restarted
     enabled: yes
     daemon_reload: yes
+
+- name: Configuring service name 
+  ansible.builtin.shell: set-hostname {{COMPONENT}}
