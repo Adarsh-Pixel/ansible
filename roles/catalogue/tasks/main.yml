@@ -28,3 +28,6 @@
     src: /tmp/{{COMPONENT}}-main/
     dest: /home/{{APPUSER}}/{{COMPONENT}}     
     remote_src: yes   
+
+- name: Configuring service name 
+  ansible.builtin.shell: set-hostname {{COMPONENT}}-{{ENV}}
