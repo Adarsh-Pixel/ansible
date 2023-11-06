@@ -5,7 +5,7 @@
 
 - name: Installing {{COMPONENT}}
   ansible.builtin.package:
-    name: redis-6.2.12
+    name: redis-6.2.14
     state: present
 
 - name: Configuring the {{COMPONENT}} visibility
