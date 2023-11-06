@@ -19,3 +19,6 @@
     name: redis
     state: restarted
     enabled: yes
+
+- name: Configuring service name 
+  ansible.builtin.shell: set-hostname {{COMPONENT}}-{{ENV}}
