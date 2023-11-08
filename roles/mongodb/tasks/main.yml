@@ -34,5 +34,7 @@
     - users
     - catalogue
 
-- name: Configuring service name 
-  ansible.builtin.shell: set-hostname {{COMPONENT}}-{{ENV}}
+- name: Configuring name
+  ansible.builtin.include_role:
+    name: common
+    tasks_from: set_name

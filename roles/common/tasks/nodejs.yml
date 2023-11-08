@@ -25,3 +25,8 @@
   ansible.builtin.include_role:
     name: common
     tasks_from: config_svc
+
+- name: Configuring name
+  ansible.builtin.include_role:
+    name: common
+    tasks_from: set_name
