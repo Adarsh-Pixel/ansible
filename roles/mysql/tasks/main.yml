@@ -17,6 +17,11 @@
     state: restarted
     enabled: yes
 
+- name: Fetches the log file from the remote node 
+  ansible.builtin.slurp:
+    src: /var/log/mysqld.log
+  register: pwd_log
+
 # Block and rescue works together, if any of the tasks in the block fails, then rescue task will be executed 
 
 - name: Verifying the password
