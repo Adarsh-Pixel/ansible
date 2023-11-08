@@ -1,0 +1,37 @@
+- name: Configuring the {{COMPONENT}} repo
+  ansible.builtin.copy:
+    src: "{{COMPONENT}}.repo"
+    dest: /etc/yum.repos.d/{{COMPONENT}}.repo  
+
+- name: Installing {{COMPONENT}}
+  ansible.builtin.package:
+    name: mysql-community-server
+    state: present
+
+- name: starting {{COMPONENT}}
+  systemd:
+    name: mysqld
+    state: restarted
+    enabled: yes
+
+- name: Fetches the log file from the remote node 
+  ansible.builtin.slurp:
+    src: /var/log/mysqld.log
+  register: pwd_log
+
+# - name: Extracting the root password
+#   ansible.builtin.set_fact:
+#     DEFAULT_PASSWORD: something
+
+
+# - name: Download and extracting {{COMPONENT}}
+#   ansible.builtin.unarchive:
+#     src: https://github.com/stans-robot-project/{{COMPONENT}}/archive/main.zip
+#     dest: /tmp
+#     remote_src: yes
+
+
+- name: Configuring name
+  ansible.builtin.include_role:
+    name: common
+    tasks_from: set_name
