@@ -17,11 +17,6 @@
     state: restarted
     enabled: yes
 
-- name: Fetches the log file from the remote node 
-  ansible.builtin.slurp:
-    src: /var/log/mysqld.log
-  register: pwd_log
-
 # Block and rescue works together, if any of the tasks in the block fails, then rescue task will be executed 
 
 - name: Verifying the password
@@ -32,6 +27,11 @@
         login_password: RoboShop@1
         filter: version
   rescue: 
+    - name: Fetches the log file from the remote node 
+      ansible.builtin.slurp:
+        src: /var/log/mysqld.log
+      register: pwd_log
+      
     - name: Extracting the root password
       ansible.builtin.set_fact:
           DEFAULT_PASSWORD: "{{ pwd_log['content'] | b64decode | regex_findall('.*temporary password.*')| join(' ') | split(' ') | last }}"
