@@ -27,3 +27,13 @@
     path: /home/{{APPUSER}}/{{COMPONENT}}/{{COMPONENT}}.ini
     regexp: '^gid'
     line: gid = {{USERINFO.group}}
+
+- name: Configuring {{COMPONENT}} service
+  ansible.builtin.include_role:
+    name: common
+    tasks_from: config_svc
+
+- name: Configuring name
+  ansible.builtin.include_role:
+    name: common
+    tasks_from: set_name
