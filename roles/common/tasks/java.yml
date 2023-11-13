@@ -15,7 +15,7 @@
    
 
 - name: Generating artifacts with npm install
-  community.general.shell: mvn clean package && mv target/{{COMPONENT}}-1.0.jar {{COMPONENT}}.jar
+  ansible.builtin.shell: mvn clean package && mv target/{{COMPONENT}}-1.0.jar {{COMPONENT}}.jar
   args:
     chdir: /home/{{APPUSER}}/{{COMPONENT}}/
 
