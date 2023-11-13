@@ -15,3 +15,15 @@
   ansible.builtin.include_role:
     name: common
     tasks_from: download_and_extract
+
+- name: Updating the UID of {{COMPONENT}}.ini file
+  ansible.builtin.lineinfile:
+    path: /home/{{APPUSER}}/{{COMPONENT}}/{{COMPONENT}}.ini
+    regexp: '^uid'
+    line: uid = {{USERINFO.uid}}
+
+- name: Updating the GID of {{COMPONENT}}.ini file
+  ansible.builtin.lineinfile:
+    path: /home/{{APPUSER}}/{{COMPONENT}}/{{COMPONENT}}.ini
+    regexp: '^gid'
+    line: gid = {{USERINFO.group}}

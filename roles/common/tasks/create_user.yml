@@ -2,3 +2,8 @@
   ansible.builtin.user:
     name: "{{APPUSER}}"
     comment: roboshop app user
+  register: USERINFO
+
+- name: Printing the variable
+  ansible.builtin.debug:
+    msg: value of the OUT is {{USERINFO}}
