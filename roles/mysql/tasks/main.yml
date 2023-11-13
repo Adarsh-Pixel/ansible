@@ -23,9 +23,9 @@
   block:
     - name: Fetch MySQL version 
       community.mysql.mysql_info:
-        login_user: root
-        login_password: RoboShop@1
-        filter: version
+          login_user: root
+          login_password: RoboShop@1
+          filter: version
   rescue: 
     - name: Fetches the log file from the remote node 
       ansible.builtin.slurp:
