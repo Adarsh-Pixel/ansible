@@ -7,8 +7,3 @@
 - name: Printing the variable
   ansible.builtin.debug:
     msg: value of the OUT is {{USERINFO}}
-
-- name: Installing app dependencies 
-  ansible.builtin.pip:
-    requirements: /home/{{APPUSER}}/{{COMPONENT}}/requirements.txt
-    executable: pip3
