@@ -88,4 +88,17 @@ roles/
 
 2) when your infrastructure is not static, which means on cloud we often scale out and down the infra, in this case maintaining the inventory is quite challenging and to avoid this, what we do is, as a part of the BOOTSTRAPPING, we will let the ansible pull command to run.
 
+    Points to be noted when using pull: 
+        * ensure your nodes running ansible has ansible installed.
+        * Pull only works from GIT.
+
 -----
+### How to use ansible pull?
+
+---
+    $ ansible-pull -U https://github.com/Adarsh-Pixel/ansible.git -e ENG=dev -e COMPONENT=mongodb  roboshop-pull.yml
+---
+
+# Role Dependency
+
+In Ansible terms, a dependency is any role that needs to have run before the current role runs.
