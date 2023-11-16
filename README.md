@@ -80,3 +80,12 @@ roles/
         meta/
             main.yml            # <--- role dependencies
 ---
+
+## When to use ansible pull vs ansible push
+
+---
+1) When your infrastructure is static, then we will host an ANSIBLE server and will target configuration management on all the nodes from your ansible server.
+
+2) when your infrastructure is not static, which means on cloud we often scale out and down the infra, in this case maintaining the inventory is quite challenging and to avoid this, what we do is, as a part of the BOOTSTRAPPING, we will let the ansible pull command to run.
+
+-----
