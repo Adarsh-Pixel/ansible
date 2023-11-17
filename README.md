@@ -102,3 +102,11 @@ roles/
 # Role Dependency
 
 In Ansible terms, a dependency is any role that needs to have run before the current role runs.
+
+### What is a handler and why do we need that ?
+
+--- 
+Ansible provides feature like handlers, which is like a task but only run when called by a notifier in another task.
+
+This feature is important because your requirements for running a task may depend on the state of a service, existance of a file or a followup tasks when state changed.
+---
