@@ -11,7 +11,20 @@ pipeline {
     // }
 
     stages{
-        stage('Performing a DRY run') {
+        stage('Lint Checks') {             // This stage should only be executed when you run the job from the feature branch
+            steps{
+                sh '''
+                    env
+                    echo *** starting lint checks***
+                    echo *** lint checks completed***
+                '''
+            }
+
+        }
+
+
+        stage('Performing a DRY run') {  
+            when { branch 'sample' }           // This stage should only run when you raise a pull request
             steps{
                 sh '''
                     env
