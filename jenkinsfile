@@ -23,8 +23,7 @@ pipeline {
         }
 
 
-        stage('Performing a DRY run') {  
-            when { branch 'sample' }           // This stage should only run when you raise a pull request
+        stage('Performing a DRY run') {             // This stage should only run when you raise a pull request
             steps{
                 sh '''
                     env
