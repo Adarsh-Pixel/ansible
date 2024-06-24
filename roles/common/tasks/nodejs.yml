@@ -11,15 +11,22 @@
     name: common
     tasks_from: create_user
     
-- name: Download and extracting {{COMPONENT}}
+# Downloads the code directly from Github
+# - name: Download and extracting {{COMPONENT}}
+#   ansible.builtin.include_role:
+#     name: common
+#     tasks_from: download_and_extract
+
+- name: Download and extracting {{COMPONENT}} from Nexus
   ansible.builtin.include_role:
     name: common
-    tasks_from: download_and_extract
+    tasks_from: download_from_nexus
    
 
-- name: Generating artifacts with npm install
-  community.general.npm:
-    path: /home/{{APPUSER}}/{{COMPONENT}}
+#Only use this when you want to download the code from Github and create artifact, with CI in place, we always use Nexus
+# - name: Generating artifacts with npm install
+#   community.general.npm:
+#     path: /home/{{APPUSER}}/{{COMPONENT}}
 
 - name: Configuring {{COMPONENT}} service
   ansible.builtin.include_role:
