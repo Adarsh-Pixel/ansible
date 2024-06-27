@@ -11,10 +11,15 @@
     name: common
     tasks_from: create_user
     
-- name: Download and extracting {{COMPONENT}}
+# - name: Download and extracting {{COMPONENT}}
+#   ansible.builtin.include_role:
+#     name: common
+#     tasks_from: download_and_extract
+
+- name: Download and extracting {{COMPONENT}} from Nexus
   ansible.builtin.include_role:
     name: common
-    tasks_from: download_and_extract
+    tasks_from: download_from_nexus
 
 - name: Updating the UID of {{COMPONENT}}.ini file
   ansible.builtin.lineinfile:
@@ -28,10 +33,10 @@
     regexp: '^gid'
     line: gid = {{USERINFO.group}}
 
-- name: Installing app dependencies 
-  ansible.builtin.pip:
-    requirements: /home/{{APPUSER}}/{{COMPONENT}}/requirements.txt
-    executable: pip3
+# - name: Installing app dependencies 
+#   ansible.builtin.pip:
+#     requirements: /home/{{APPUSER}}/{{COMPONENT}}/requirements.txt
+#     executable: pip3
 
 - name: Configuring {{COMPONENT}} service
   ansible.builtin.include_role:
