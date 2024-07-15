@@ -33,10 +33,10 @@
     regexp: '^gid'
     line: gid = {{USERINFO.group}}
 
-# - name: Installing app dependencies 
-#   ansible.builtin.pip:
-#     requirements: /home/{{APPUSER}}/{{COMPONENT}}/requirements.txt
-#     executable: pip3
+- name: Installing app dependencies 
+  ansible.builtin.pip:
+    requirements: /home/{{APPUSER}}/{{COMPONENT}}/requirements.txt
+    executable: pip3.6
 
 - name: Configuring {{COMPONENT}} service
   ansible.builtin.include_role:
