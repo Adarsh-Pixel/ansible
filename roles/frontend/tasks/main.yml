@@ -33,6 +33,11 @@
     enabled: yes
     daemon_reload: yes
 
+- name: Installing Filebeat 
+  ansible.builtin.include_role:
+    name: elk
+    tasks_from: filebeat
+
 - name: Configuring name
   ansible.builtin.include_role:
     name: common
