@@ -1,5 +1,5 @@
 filebeat.inputs:
-- type: filestream
+- type: log
 
   id: my-filestream-id
   enabled: true
