@@ -10,7 +10,7 @@ filebeat.inputs:
     - "{{LOGFILE}}"
 
   fields:
-   COMPONENT: "{{COMPONENT}}"
+   component: "{{COMPONENT}}"
    logtype: "{{LOGTYPE}}"
 
 filebeat.config.modules:
