@@ -117,3 +117,7 @@ This feature is important because your requirements for running a task may depen
 grok    : https://grokdebugger.com/
 patterns: https://github.com/cjslack/grok-debugger/blob/master/public/patterns/grok-patterns
 ---
+
+### Frontend grok pattern
+
+%{HTTPDATE:log_timestamp} %{IP:source_ip} %{WORD:http_method} %{PATH:http_path} HTTP/%{NUMBER:http_version} %{NUMBER:http_status:int} %{NUMBER:bytes_sent} %{NUMBER:response_time:float}
