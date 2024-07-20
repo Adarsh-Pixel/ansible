@@ -110,3 +110,10 @@ Ansible provides feature like handlers, which is like a task but only run when c
 
 This feature is important because your requirements for running a task may depend on the state of a service, existance of a file or a followup tasks when state changed.
 ---
+
+### Grok Debugger : Helps in converting unstructured logs to structured :
+
+---
+grok    : https://grokdebugger.com/
+patterns: https://github.com/cjslack/grok-debugger/blob/master/public/patterns/grok-patterns
+---
